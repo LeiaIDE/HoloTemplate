@@ -1,7 +1,11 @@
  var windowWidth = window.innerWidth, windowHeight = window.innerHeight;
  var camera,renderer,scene;
- Init();
- animate();
+ window.onload = function (){
+    console.log("onload");
+    Init();
+    animate();
+ };
+
 
 function Init(){
         scene = new THREE.Scene();
@@ -27,6 +31,9 @@ function Init(){
   
         //add Light
  		addLights();
+  
+        //add Gyro Monitor
+        //addGyroMonitor();
  }
 
  function animate() 
