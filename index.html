@@ -123,14 +123,10 @@
         xmlhttp.onreadystatechange=function() {
              if(this.readyState == this.DONE) {
                if(this.status == 200 && this.response != null ) {
-                 var params =  JSON.parse(this.responseText);
-                   console.log("requested display info:" + this.responseText);
+                 var params =  JSON.parse(this.responseText); 
                    if(params.yaw) yaw.innerText = params.yaw;
                    if(params.pitch) pitch.innerText = params.pitch;
-                   if(params.roll) roll.innerText = params.roll;
-                 console.log(yaw.innerText);
-                 console.log(pitch.innerText);
-                 console.log(roll.innerText);
+                   if(params.roll) roll.innerText = params.roll; 
                    setTimeout(function(){queryYawPitchRoll();}, 200);
                  return;
                }else{
