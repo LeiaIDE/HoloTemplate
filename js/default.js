@@ -1,15 +1,18 @@
  var windowWidth = window.innerWidth, windowHeight = window.innerHeight;
  var camera,renderer,scene;
- Init();
- animate();
+ window.onload = function (){
+    console.log("onload");
+    Init();
+    animate();
+ };
 
 function Init(){
         scene = new THREE.Scene();
   
        //setup camera
  		camera = new LeiaCamera();
-        camera.position.copy(_camPosition);
-        camera.lookAt(_tarPosition);
+        camera.position.copy(new THREE.Vector3(_camPosition.x, _camPosition.y, _camPosition.z));
+        camera.lookAt(new THREE.Vector3(_tarPosition.x, _tarPosition.y, _tarPosition.z));
         scene.add(camera);
   
        //setup rendering parameter
@@ -27,6 +30,9 @@ function Init(){
   
         //add Light
  		addLights();
+  
+        //add Gyro Monitor
+        //addGyroMonitor();
  }
 
  function animate() 
