@@ -20,6 +20,7 @@ function Init(){
          antialias:true, 
  		renderMode: _renderMode, 
 		shaderMode: _nShaderMode,
+		colorMode : _colorMode,
 		devicePixelRatio: 1 
         } );
  		renderer.Leia_setSize( windowWidth, windowHeight );
