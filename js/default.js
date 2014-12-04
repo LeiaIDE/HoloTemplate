@@ -10,10 +10,12 @@ function Init(){
         scene = new THREE.Scene();
   
        //setup camera
- 		camera = new LeiaCamera();
-        camera.position.copy(new THREE.Vector3(_camPosition.x, _camPosition.y, _camPosition.z));
-        camera.lookAt(new THREE.Vector3(_tarPosition.x, _tarPosition.y, _tarPosition.z));
+        camera = new LeiaCamera({
+           cameraPosition:new THREE.Vector3(_camPosition.x, _camPosition.y, _camPosition.z), 
+		   targetPosition: new THREE.Vector3(_tarPosition.x, _tarPosition.y, _tarPosition.z)
+        });
         scene.add(camera);
+ 
   
        //setup rendering parameter
  		renderer = new LeiaWebGLRenderer({
