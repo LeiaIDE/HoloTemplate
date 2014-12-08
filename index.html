@@ -6,9 +6,12 @@
       <meta charset="utf-8">
       <title>holodev</title>
       <script>  
-            var _renderMode = 3; 
+      // SingleView, TiledView, SwizzleMode,TuningPanelOn,SimGyro
+            var _renderMode = "SwizzleMode"; 
+            //0: basic; 1: sharpen; 2:supersampler
 		   var _nShaderMode = 0;
-		   var _messageFlag = 0;
+       // MessageToIDE=0, MessageToEmulator=1,
+		   var _messageFlag = "MessageToIDE"; 
    		   var _camFov = 50; 
            var _camPosition = new THREE.Vector3(0, 0, 100);
            var _tarPosition = new THREE.Vector3(0, 0, 0);
