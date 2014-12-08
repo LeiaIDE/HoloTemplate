@@ -44,9 +44,9 @@
       }
       function InitLC()
       {
-          var exdate=new Date();
-          exdate.setDate(exdate.getDate() + 10);
-          cookieExpireDate = exdate.toGMTString();
+         var exdate = new Date();
+        exdate.setTime(exdate.getTime() + (10*24*60*60*1000));
+        cookieExpireDate = exdate.toGMTString();
             var cookieInfo = document.cookie.split(';');
             for(var i=0; i<cookieInfo.length; i++) {
                 var c = cookieInfo[i].trim();
