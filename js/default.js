@@ -47,8 +47,8 @@ function Init(){
      camera:camera,
      holoScreenSize:_holoScreenSize,
      holoCamFov:_camFov,
-      upClip: _up,
-     downClip:  _down,
+      upclip: _up,
+     downclip:  _down,
      messageFlag:_messageFlag
    });
  }
