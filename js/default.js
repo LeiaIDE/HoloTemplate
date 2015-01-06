@@ -1,10 +1,9 @@
  var windowWidth = window.innerWidth, windowHeight = window.innerHeight;
  var camera,renderer,scene;
- window.onload = function (){
-    console.log("onload");
+ head.ready(function() {
     Init();
     animate();
- };
+ });
 
 function Init(){
         scene = new THREE.Scene();
