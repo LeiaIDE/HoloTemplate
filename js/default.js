@@ -23,6 +23,7 @@
          renderMode: _renderMode,
          shaderMode: _nShaderMode,
          colorMode: _colorMode,
+         compFac:_depthCompressionFactor,
          devicePixelRatio: 1
      });
      renderer.Leia_setSize({
