@@ -18,7 +18,6 @@ var meshArray = [];
      });
      scene.add(camera);
 
-
      //setup rendering parameter
      renderer = new LeiaWebGLRenderer({
          antialias: true,
