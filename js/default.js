@@ -33,6 +33,8 @@ var meshArray = [];
          height: windowHeight,
          autoFit: true
      });
+     renderer.shadowMapEnabled = true;
+     renderer.shadowMapSoft = true;
      document.body.appendChild(renderer.domElement);
 
      //add object to Scene
@@ -91,16 +93,19 @@ var meshArray = [];
    
     //Add Text
     addTextMenu({
-      text: "HelloWorld",
+      text: "Hello",
       name: "helloworld",
-      size: 12,
-      positionX: -40,
-      positionY: 0,
-      positionZ: 0,
+      size: 15,
+      positionX: -20,
+      positionY: -5,
+      positionZ: 3,
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0
     });
+   
+   //add background texture
+   LEIA_setBackgroundPlane('resource/brickwall_900x600_small.jpg');
  }
 
 function addTextMenu(parameters){
@@ -155,6 +160,8 @@ function addTextMenu(parameters){
     var menuMesh = new THREE.Mesh(menuGeometry, menuMaterial);
     menuMesh.position.set(posX, posY, posZ);
     menuMesh.rotation.set(rotateX, rotateY, rotateZ);
+    menuMesh.castShadow = true;
+    menuMesh.receiveShadow = true;
     var group = new THREE.Object3D();
     group.add(menuMesh);
     scene.add(group);
@@ -223,3 +230,22 @@ function addTextMenu(parameters){
      xhr1.responseType = "arraybuffer";
      xhr1.send(null);
  }
+
+function LEIA_setBackgroundPlane(filename, aspect) {
+    var foregroundPlaneTexture = new THREE.ImageUtils.loadTexture(filename);
+    foregroundPlaneTexture.wrapS = foregroundPlaneTexture.wrapT = THREE.RepeatWrapping;
+    foregroundPlaneTexture.repeat.set(1, 1);
+
+    //
+    var planeMaterial = new THREE.MeshPhongMaterial({
+        map: foregroundPlaneTexture,
+        color: 0xffdd99
+    });
+    var planeGeometry = new THREE.PlaneGeometry(100, 75, 10, 10);
+    plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane.position.z = -6;
+    plane.castShadow = false;
+    plane.receiveShadow = true;
+    scene.add(plane);
+}
+
