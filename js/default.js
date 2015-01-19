@@ -70,7 +70,7 @@ function animate() {
 
 function addObjectsToScene() {
     //Add your objects here
-    //add STL Object
+    //API to add STL Object
     /*  Leia_LoadSTLModel({
         path: 'resource/LEIA1.stl'
     },function(mesh){
