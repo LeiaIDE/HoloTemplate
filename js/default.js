@@ -1,6 +1,4 @@
- var windowWidth = window.innerWidth,
-     windowHeight = window.innerHeight;
- var camera, renderer, scene;
+var camera, renderer, scene;
 var meshArray = [];
 
  head.ready(function() {
@@ -27,14 +25,9 @@ var meshArray = [];
          compFac:_depthCompressionFactor,
          devicePixelRatio: 1
      });
-     renderer.Leia_setSize({
-         width: windowWidth,
-         height: windowHeight,
-         autoFit: true
-     });
      renderer.shadowMapEnabled = true;
      renderer.shadowMapSoft = true;
-     document.body.appendChild(renderer.domElement);
+     Leia_addRender(renderer);
 
      //add object to Scene
      addObjectsToScene();
