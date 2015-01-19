@@ -108,14 +108,25 @@ function addObjectsToScene() {
 
     //add background texture
     var backgroundPlane = Leia_createTexturePlane({
-        filename: 'resource/brickwall_900x600_small.jpg',
+        filename: 'resource/world-map-background2.jpg',
         width: 100,
         height: 75
     });
-    backgroundPlane.position.z = -6;
+    backgroundPlane.position.z = -8;
     backgroundPlane.castShadow = false;
     backgroundPlane.receiveShadow = true;
     scene.add(backgroundPlane);
+  
+  //add center plane
+   var centerPlane = Leia_createTexturePlane({
+        filename: 'resource/crack001.png',
+        width: 100,
+        height: 75,
+        transparent:true
+     
+    });
+    centerPlane.position.z = 0;
+    scene.add(centerPlane);
 }
 
 function createText(parameters) {
