@@ -72,15 +72,22 @@ var meshArray = [];
  function addObjectsToScene() {
      //Add your objects here
       //add STL Object
-     /*addSTLModel({
-         path: 'resource/Cube.stl',
-         meshGroupName: 'Cube',
-         meshSizeX: 30,
-         meshSizeY: 30,
-         meshSizeZ: 30,
-         translateX: 0,
-         translateY: 0,
-         translateZ: 0,
+     /*  Leia_LoadSTLModel({
+         path: 'resource/LEIA1.stl'
+     },function(mesh){
+       mesh.material.side = THREE.DoubleSide;
+       mesh.castShadow = true;
+       mesh.receiveShadow = true;
+       mesh.material.metal = true;
+       mesh.scale.set(60, 60, 60);
+       mesh.position.set(0, 0, 0);
+       var group = new THREE.Object3D();
+       group.add(mesh);
+       scene.add(group);
+       meshArray.push({
+         meshGroup: group,
+         name: 'LEIA1'
+       });
      });*/
    
     //Add Text
