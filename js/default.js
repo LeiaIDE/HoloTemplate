@@ -229,25 +229,3 @@ function addTextMenu(parameters){
      xhr1.send(null);
  }
 
-function LEIA_createTexturePlane(parameters){
-    parameters = parameters || {};
-    var filename = parameters.filename;
-    var width = parameters.width;
-    var height = parameters.height;
-    if(width === undefined || height === undefined){
-      width = 40;
-      height = 30;
-    }
-    var planeTexture = new THREE.ImageUtils.loadTexture(filename);
-    planeTexture.wrapS = planeTexture.wrapT = THREE.RepeatWrapping;
-    planeTexture.repeat.set(1, 1);
-    var planeMaterial = new THREE.MeshPhongMaterial({
-        map: planeTexture,
-        color: 0xffffff
-    });
-    var planeGeometry = new THREE.PlaneGeometry(width, height, 10, 10);
-    var  plane = new THREE.Mesh(planeGeometry, planeMaterial);
-  
-    return plane;
-}
-
