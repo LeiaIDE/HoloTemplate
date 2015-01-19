@@ -167,7 +167,6 @@ function createText(parameters) {
 function addLights() {
     //Add Lights Here
     var light = new THREE.SpotLight(0xffffff);
-    //light.color.setHSL( Math.random(), 1, 0.5 );
     light.position.set(0, 60, 60);
     light.shadowCameraVisible = false;
     light.castShadow = true;
