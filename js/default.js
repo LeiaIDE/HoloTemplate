@@ -116,27 +116,9 @@ var meshArray = [];
  }
 
 function createText(parameters){
-    parameters = parameters || {};
-   
+   parameters = parameters || {};
    var strText = parameters.text;
-   var posX = parameters.positionX;
-   var posY = parameters.positionY;
-   var posZ = parameters.positionZ;
-   var rotateX = parameters.rotateX;
-   var rotateY = parameters.rotateY;
-   var rotateZ = parameters.rotateZ;
-   var name = parameters.name;
    var size = parameters.size;
-   if(posX === undefined || posY === undefined || posZ === undefined){
-     posX = 0;
-     posY = 0;
-     posZ = 0;
-   }
-   if(rotateX === undefined || rotateY === undefined || rotateZ === undefined){
-     rotateX = 0;
-     rotateY = 0;
-     rotateZ = 0;
-   }
    var menuGeometry = new THREE.TextGeometry(
         strText, {
             size: size,
@@ -165,7 +147,6 @@ function createText(parameters){
         ]
     );
     var menuMesh = new THREE.Mesh(menuGeometry, menuMaterial);
-
     return menuMesh;
  }
 
