@@ -91,17 +91,19 @@ var meshArray = [];
      });*/
    
     //Add Text
-    addTextMenu({
+    var helloText = createText({
       text: "Hello",
-      name: "helloworld",
-      size: 15,
-      positionX: -20,
-      positionY: -5,
-      positionZ: 3,
-      rotateX: 0,
-      rotateY: 0,
-      rotateZ: 0
+      size: 15
     });
+    helloText.position.set(-20, -5, 3);
+    helloText.rotation.set(0, 0, 0);
+    helloText.castShadow = true;
+    helloText.receiveShadow = true;
+    var helloGroup = new THREE.Object3D();
+    helloGroup.add(helloText);
+    scene.add(helloGroup);
+    meshArray.push({meshGroup:helloGroup,name:"helloworld"});
+  
    
    //add background texture
    var backgroundPlane = Leia_createTexturePlane({filename:'resource/brickwall_900x600_small.jpg',
@@ -113,7 +115,7 @@ var meshArray = [];
     scene.add(backgroundPlane);
  }
 
-function addTextMenu(parameters){
+function createText(parameters){
     parameters = parameters || {};
    
    var strText = parameters.text;
@@ -163,15 +165,8 @@ function addTextMenu(parameters){
         ]
     );
     var menuMesh = new THREE.Mesh(menuGeometry, menuMaterial);
-    menuMesh.position.set(posX, posY, posZ);
-    menuMesh.rotation.set(rotateX, rotateY, rotateZ);
-    menuMesh.castShadow = true;
-    menuMesh.receiveShadow = true;
-    var group = new THREE.Object3D();
-    group.add(menuMesh);
-    scene.add(group);
-    meshArray.push({meshGroup:group,name:name});
-   
+
+    return menuMesh;
  }
 
  function addLights() {
