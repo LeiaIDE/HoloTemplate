@@ -97,7 +97,13 @@ var meshArray = [];
     });
    
    //add background texture
-   LEIA_setBackgroundPlane('resource/brickwall_900x600_small.jpg');
+   var backgroundPlane = LEIA_createTexturePlane({filename:'resource/brickwall_900x600_small.jpg',
+                            width:100,
+                            height:75});
+    backgroundPlane.position.z = -6;
+    backgroundPlane.castShadow = false;
+    backgroundPlane.receiveShadow = true;
+    scene.add(backgroundPlane);
  }
 
 function addTextMenu(parameters){
@@ -223,21 +229,25 @@ function addTextMenu(parameters){
      xhr1.send(null);
  }
 
-function LEIA_setBackgroundPlane(filename, aspect) {
-    var foregroundPlaneTexture = new THREE.ImageUtils.loadTexture(filename);
-    foregroundPlaneTexture.wrapS = foregroundPlaneTexture.wrapT = THREE.RepeatWrapping;
-    foregroundPlaneTexture.repeat.set(1, 1);
-
-    //
+function LEIA_createTexturePlane(parameters){
+    parameters = parameters || {};
+    var filename = parameters.filename;
+    var width = parameters.width;
+    var height = parameters.height;
+    if(width === undefined || height === undefined){
+      width = 40;
+      height = 30;
+    }
+    var planeTexture = new THREE.ImageUtils.loadTexture(filename);
+    planeTexture.wrapS = planeTexture.wrapT = THREE.RepeatWrapping;
+    planeTexture.repeat.set(1, 1);
     var planeMaterial = new THREE.MeshPhongMaterial({
-        map: foregroundPlaneTexture,
-        color: 0xffdd99
+        map: planeTexture,
+        color: 0xffffff
     });
-    var planeGeometry = new THREE.PlaneGeometry(100, 75, 10, 10);
-    plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.position.z = -6;
-    plane.castShadow = false;
-    plane.receiveShadow = true;
-    scene.add(plane);
+    var planeGeometry = new THREE.PlaneGeometry(width, height, 10, 10);
+    var  plane = new THREE.Mesh(planeGeometry, planeMaterial);
+  
+    return plane;
 }
 
