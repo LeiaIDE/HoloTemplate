@@ -104,7 +104,7 @@ var meshArray = [];
     });
    
    //add background texture
-   var backgroundPlane = LEIA_createTexturePlane({filename:'resource/brickwall_900x600_small.jpg',
+   var backgroundPlane = Leia_createTexturePlane({filename:'resource/brickwall_900x600_small.jpg',
                             width:100,
                             height:75});
     backgroundPlane.position.z = -6;
