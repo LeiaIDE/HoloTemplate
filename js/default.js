@@ -150,11 +150,11 @@ function createText(parameters) {
     );
     var menuMaterial = new THREE.MeshFaceMaterial(
         [
-            new THREE.MeshPhongMaterial({
+            new THREE.MeshLambertMaterial({
                 color: 0xffffff,
                 shading: THREE.FlatShading
             }), // front
-            new THREE.MeshPhongMaterial({
+            new THREE.MeshLambertMaterial({
                 color: 0xffffff,
                 shading: THREE.SmoothShading
             }) // side
