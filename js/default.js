@@ -27,7 +27,7 @@ function Init() {
     });
     renderer.shadowMapEnabled = true;
     renderer.shadowMapSoft = true;
-    Leia_addRender(renderer);
+    Leia_addRender(renderer,{bFPSVisible:true});
 
     //add object to Scene
     addObjectsToScene();
