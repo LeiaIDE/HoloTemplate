@@ -9,11 +9,12 @@
         var _messageFlag = 'MessageToIDE';
         var _colorMode = "color"; //"monochrome"
         var _camPosition = {x:0.00,y:0.00,z:600.00};
-        var _tarPosition = {x:0.00,y:0.00,z:0.00};
+        var _tarPosition = {x:0.00,y:0.00,z:-0.20};
         var _holoScreenSize = 100.37;
         var _up = 18.26;
         var _down = -19.44;
-
+        var _maxDisparity = 5.00;
+      
         //filter tuning parameters:
         //supersample: [a 1 a]
         //sharpen: [c b 1 b c]
@@ -22,6 +23,7 @@
         var _filterC = -0.06;
 
         var _depthCompressionFactor = 1.0;
+      
     </script>
     <script src="https://s3.amazonaws.com/leiacore/head.load.min.js"></script>
     <script>
