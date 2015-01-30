@@ -76,7 +76,7 @@ function addObjectsToScene() {
       Leia_LoadSTLModel({
         path: 'resource/LEIA1.stl'
     },function(mesh){
-      mesh.material.side = THREE.DoubleSide;
+     // mesh.material.side = THREE.DoubleSide;
       mesh.castShadow = true;
     //  mesh.receiveShadow = true;
       mesh.material.metal = true;
