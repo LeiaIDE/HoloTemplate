@@ -79,7 +79,7 @@ function addObjectsToScene() {
      // mesh.material.side = THREE.DoubleSide;
       mesh.castShadow = true;
     //  mesh.receiveShadow = true;
-      mesh.material.metal = true;
+    //  mesh.material.metal = true;
       mesh.scale.set(60, 60, 60);
       mesh.position.set(0, 0, 0);
       var group = new THREE.Object3D();
