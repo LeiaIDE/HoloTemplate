@@ -50,6 +50,10 @@ function animate() {
                 curMeshGroup.rotation.x = 0.8 * Math.sin(5.0 * LEIA.time);
                 curMeshGroup.rotation.z = 0.6 * 0.6 * Math.sin(3.0 * LEIA.time);
                 break;
+           case "LEIA1":
+                curMeshGroup.rotation.x = 0.8 * Math.sin(5.0 * LEIA.time);
+                curMeshGroup.rotation.z = 0.6 * 0.6 * Math.sin(3.0 * LEIA.time);
+                break;
             default:
                 break;
         }
@@ -69,12 +73,12 @@ function animate() {
 function addObjectsToScene() {
     //Add your objects here
     //API to add STL Object
-    /*  Leia_LoadSTLModel({
+      Leia_LoadSTLModel({
         path: 'resource/LEIA1.stl'
     },function(mesh){
       mesh.material.side = THREE.DoubleSide;
       mesh.castShadow = true;
-      mesh.receiveShadow = true;
+    //  mesh.receiveShadow = true;
       mesh.material.metal = true;
       mesh.scale.set(60, 60, 60);
       mesh.position.set(0, 0, 0);
@@ -85,7 +89,7 @@ function addObjectsToScene() {
         meshGroup: group,
         name: 'LEIA1'
       });
-    });*/
+    });
 
     //Add Text
     var helloText = createText({
@@ -97,13 +101,13 @@ function addObjectsToScene() {
     helloText.castShadow = true;
     helloText.receiveShadow = true;
     var helloGroup = new THREE.Object3D();
-    helloGroup.add(helloText);
+  /*  helloGroup.add(helloText);
     scene.add(helloGroup);
     meshArray.push({
         meshGroup: helloGroup,
         name: "helloworld"
     });
-
+*/
     //add background texture
     var backgroundPlane = Leia_createTexturePlane({
         filename: 'resource/world-map-background2.jpg',
