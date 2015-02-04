@@ -1,10 +1,10 @@
 var camera, renderer, scene;
 var meshArray = [];
 
-head.ready(function() {
+window.onload = function() {
     Init();
     animate();
-});
+};
 
 function Init() {
     scene = new THREE.Scene();
