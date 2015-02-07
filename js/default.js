@@ -96,23 +96,6 @@ function addObjectsToScene() {
     });
   });
 
-  //Add Text
-  var helloText = createText({
-    text: "Hello",
-    size: 15
-  });
-  helloText.position.set(-20, -5, 3);
-  helloText.rotation.set(0, 0, 0);
-  helloText.castShadow = true;
-  helloText.receiveShadow = true;
-  var helloGroup = new THREE.Object3D();
-  /*  helloGroup.add(helloText);
-    scene.add(helloGroup);
-    meshArray.push({
-        meshGroup: helloGroup,
-        name: "helloworld"
-    });
-*/
   //add background texture
   var backgroundPlane = Leia_createTexturePlane({
     filename: 'resource/world-map-background2.jpg',
