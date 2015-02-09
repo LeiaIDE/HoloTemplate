@@ -157,14 +157,16 @@ function createText(parameters) {
 
 function addLights() {
   //Add Lights Here
-  var light = new THREE.SpotLight(0xffffff);
+/*  var light = new THREE.SpotLight(0xffffff);
   light.position.set(0, 60, 60);
   light.shadowCameraVisible = false;
   light.castShadow = true;
   light.shadowMapWidth = light.shadowMapHeight = 256;
   light.shadowDarkness = 0.7;
-  scene.add(light);
-
+  scene.add(light);*/
+  var xl = new THREE.DirectionalLight( 0xffffff );
+  xl.position.set( 1, 0, 2 );
+  scene.add( xl );
   var ambientLight = new THREE.AmbientLight(0x222222);
   scene.add(ambientLight);
 }
