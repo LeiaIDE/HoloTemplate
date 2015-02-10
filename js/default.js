@@ -8,6 +8,7 @@ window.onload = function () {
 
 function Init() {
   LEIA.virtualScreen.Init();
+  LEIA.physicalScreen.InitFromExternalJson('https://s3.amazonaws.com/leiacore/config.json');
   //LEIA.virtualScreen.loadDefault();
  /* LEIA.virtualScreen.width = 40;
   LEIA.virtualScreen.center.copy({x:0.00,y:0.00,z:0.00});
