@@ -2,13 +2,15 @@ var camera, renderer, scene;
 var meshArray = [];
 
 window.onload = function () {
-  Init();
-  animate();
+  LEIA.physicalScreen.InitFromExternalJson('https://s3.amazonaws.com/leiacore/config.json',function(){
+    Init();
+    animate();
+  });
 };
 
 function Init() {
   LEIA.virtualScreen.Init();
-  LEIA.physicalScreen.InitFromExternalJson('https://s3.amazonaws.com/leiacore/config.json');
+  
   //LEIA.virtualScreen.loadDefault();
  /* LEIA.virtualScreen.width = 40;
   LEIA.virtualScreen.center.copy({x:0.00,y:0.00,z:0.00});
@@ -17,7 +19,7 @@ function Init() {
   LEIA.virtualScreen.d = 500;
   LEIA.virtualScreen.disp = 5;*/
  // LEIA.virtualScreen.h = 1/10.0; //1/10.0;
-  LEIA.physicalScreen.resolution = new THREE.Vector2(200,150);
+  //LEIA.physicalScreen.resolution = new THREE.Vector2(200,150);
   scene = new THREE.Scene();
 
   //setup camera
